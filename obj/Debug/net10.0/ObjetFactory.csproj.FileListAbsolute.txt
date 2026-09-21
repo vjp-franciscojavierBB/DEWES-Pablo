@@ -1,0 +1,15 @@
+C:\Users\javie\Pablo\ObjetFactory\obj\Debug\net10.0\ObjetFactory.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\javie\Pablo\ObjetFactory\obj\Debug\net10.0\ObjetFactory.AssemblyInfoInputs.cache
+C:\Users\javie\Pablo\ObjetFactory\obj\Debug\net10.0\ObjetFactory.AssemblyInfo.cs
+C:\Users\javie\Pablo\ObjetFactory\obj\Debug\net10.0\ObjetFactory.csproj.CoreCompileInputs.cache
+C:\Users\javie\Pablo\ObjetFactory\obj\Debug\net10.0\ObjetFactory.sourcelink.json
+C:\Users\javie\Pablo\ObjetFactory\bin\Debug\net10.0\ObjetFactory.exe
+C:\Users\javie\Pablo\ObjetFactory\bin\Debug\net10.0\ObjetFactory.deps.json
+C:\Users\javie\Pablo\ObjetFactory\bin\Debug\net10.0\ObjetFactory.runtimeconfig.json
+C:\Users\javie\Pablo\ObjetFactory\bin\Debug\net10.0\ObjetFactory.dll
+C:\Users\javie\Pablo\ObjetFactory\bin\Debug\net10.0\ObjetFactory.pdb
+C:\Users\javie\Pablo\ObjetFactory\obj\Debug\net10.0\ObjetFactory.dll
+C:\Users\javie\Pablo\ObjetFactory\obj\Debug\net10.0\refint\ObjetFactory.dll
+C:\Users\javie\Pablo\ObjetFactory\obj\Debug\net10.0\ObjetFactory.pdb
+C:\Users\javie\Pablo\ObjetFactory\obj\Debug\net10.0\ObjetFactory.genruntimeconfig.cache
+C:\Users\javie\Pablo\ObjetFactory\obj\Debug\net10.0\ref\ObjetFactory.dll
