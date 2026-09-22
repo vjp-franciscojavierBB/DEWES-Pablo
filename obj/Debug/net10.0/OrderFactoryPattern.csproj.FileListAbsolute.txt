@@ -1,0 +1,15 @@
+C:\Users\javie\Pablo\ObjetFactory\bin\Debug\net10.0\OrderFactoryPattern.exe
+C:\Users\javie\Pablo\ObjetFactory\bin\Debug\net10.0\OrderFactoryPattern.deps.json
+C:\Users\javie\Pablo\ObjetFactory\bin\Debug\net10.0\OrderFactoryPattern.runtimeconfig.json
+C:\Users\javie\Pablo\ObjetFactory\bin\Debug\net10.0\OrderFactoryPattern.dll
+C:\Users\javie\Pablo\ObjetFactory\bin\Debug\net10.0\OrderFactoryPattern.pdb
+C:\Users\javie\Pablo\ObjetFactory\obj\Debug\net10.0\OrderFactoryPattern.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\javie\Pablo\ObjetFactory\obj\Debug\net10.0\OrderFactoryPattern.AssemblyInfoInputs.cache
+C:\Users\javie\Pablo\ObjetFactory\obj\Debug\net10.0\OrderFactoryPattern.AssemblyInfo.cs
+C:\Users\javie\Pablo\ObjetFactory\obj\Debug\net10.0\OrderFactoryPattern.csproj.CoreCompileInputs.cache
+C:\Users\javie\Pablo\ObjetFactory\obj\Debug\net10.0\OrderFactoryPattern.sourcelink.json
+C:\Users\javie\Pablo\ObjetFactory\obj\Debug\net10.0\OrderFactoryPattern.dll
+C:\Users\javie\Pablo\ObjetFactory\obj\Debug\net10.0\refint\OrderFactoryPattern.dll
+C:\Users\javie\Pablo\ObjetFactory\obj\Debug\net10.0\OrderFactoryPattern.pdb
+C:\Users\javie\Pablo\ObjetFactory\obj\Debug\net10.0\OrderFactoryPattern.genruntimeconfig.cache
+C:\Users\javie\Pablo\ObjetFactory\obj\Debug\net10.0\ref\OrderFactoryPattern.dll
