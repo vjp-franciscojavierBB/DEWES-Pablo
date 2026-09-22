@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\javie\\Pablo\\ObjetFactory\\ObjetFactory.csproj",
-      "projectName": "ObjetFactory",
-      "projectPath": "C:\\Users\\javie\\Pablo\\ObjetFactory\\ObjetFactory.csproj",
+      "projectUniqueName": "C:\\Users\\javie\\Pablo\\ObjetFactory\\OrderFactoryPattern.csproj",
+      "projectName": "OrderFactoryPattern",
+      "projectPath": "C:\\Users\\javie\\Pablo\\ObjetFactory\\OrderFactoryPattern.csproj",
       "packagesPath": "C:\\Users\\javie\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\javie\\Pablo\\ObjetFactory\\obj\\",
       "projectStyle": "PackageReference",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iMhjGGflFj8=",
+  "dgSpecHash": "AtLO/w/hV3Q=",
   "success": true,
-  "projectFilePath": "C:\\Users\\javie\\Pablo\\ObjetFactory\\ObjetFactory.csproj",
+  "projectFilePath": "C:\\Users\\javie\\Pablo\\ObjetFactory\\OrderFactoryPattern.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
