@@ -1,10 +1,25 @@
 namespace OrderFactoryPattern;
 
-/// <summary>
-/// Represents an order with its details.
-/// </summary>
-/// <param name="Id">The unique identifier for the order.</param>
-/// <param name="Customer">The type of customer placing the order.</param>
-/// <param name="Total">The total amount of the order.</param>
-/// <param name="DiscountRate">The discount rate applied to the order.</param>
-internal record Order(string Id, CustomerType Customer, decimal Total, decimal DiscountRate);
+abstract class Order
+{
+    public string Id { get; init; }
+    public CustomerType Customer { get; init; }
+
+    public string Status { get; set; } = "Pending";
+    public decimal Total { get; init; }
+    public decimal DiscountRate { get; init; }
+    public Order(string id, CustomerType customer, decimal total)
+    {
+        Id = id;
+        Customer = customer;
+        Total = total;
+        DiscountRate = customer switch
+        {
+            CustomerType.Regular => 0.00m,
+            CustomerType.Premium => 0.10m,
+            CustomerType.Vip => 0.20m,
+            _ => throw new ArgumentOutOfRangeException(nameof(customer))
+        };
+    }
+    public abstract decimal CalculateShippingCost(double weightKg);
+}

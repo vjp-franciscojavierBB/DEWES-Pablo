@@ -4,9 +4,9 @@ using OrderFactoryPattern;
 List<Order> _orders = [
     // Ojo, como no uso el Factory he puesto los descuentos a mano;
     // lo ideal es usar el OrderFactory.Create para crear los pedidos.
-    new Order("ORD-0001", CustomerType.Regular, 100.00m, 0.00m),
-    new Order("ORD-0002", CustomerType.Premium, 200.00m, 0.10m),
-    new Order("ORD-0003", CustomerType.Vip, 300.00m, 0.20m),
+    new StandardOrder("ORD-0001", CustomerType.Regular, 100.00m),
+    new ExpressOrder("ORD-0002", CustomerType.Premium, 200.00m),
+    new StandardOrder("ORD-0003", CustomerType.Vip, 300.00m),
 ];
 
 Console.WriteLine("=== ORDER FACTORY ===");
@@ -33,7 +33,10 @@ while (true)
             Console.Write("Introduzca la cantidad total del pedido: ");
             string? totalInput = Console.ReadLine();
 
-            if (!TryCreateOrder(id, customerType, totalInput, out Order? order, out string? error))
+            Console.Write("Introduzca el tipo de pedido (Standard, Express): ");
+            string? orderType = Console.ReadLine();
+
+            if (!TryCreateOrder(id, customerType, orderType, totalInput, out Order? order, out string? error))
             {
                 Console.WriteLine(error);
                 continue;
@@ -73,7 +76,7 @@ void ListOrders()
 
 // C# tiene mecaniusmos como los llamados Attributes:
 // NotNullWhen es un atributo que indica que el parámetro de salida "order" no será nulo cuando el método devuelva true.
-bool TryCreateOrder(string? id, string? customerType, string? totalInput,
+bool TryCreateOrder(string? id, string? customerType, string? orderType, string? totalInput,
     [NotNullWhen(true)] out Order? order, out string? error)
 {
     order = null;
@@ -97,7 +100,12 @@ bool TryCreateOrder(string? id, string? customerType, string? totalInput,
         return false;
     }
 
-    order = OrderFactory.Create(id, type, total);
+    if (!Enum.TryParse(orderType, out ShippingType shippingType))
+    {
+        error = "Tipo de envío inválido.";
+        return false;
+    }
 
+    order = OrderFactory.Create(id, type, total, shippingType);
     return true;
 }
