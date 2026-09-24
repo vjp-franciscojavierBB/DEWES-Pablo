@@ -107,5 +107,6 @@ bool TryCreateOrder(string? id, string? customerType, string? orderType, string?
     }
 
     order = OrderFactory.Create(id, type, total, shippingType);
+
     return true;
 }
