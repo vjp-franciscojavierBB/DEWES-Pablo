@@ -71,6 +71,10 @@ void ListOrders()
     foreach (var order in _orders)
     {
         Console.WriteLine($"ID: {order.Id}, Descuento: {order.DiscountRate}");
+        if (order is ITrackable trackable)
+        {
+           Console.WriteLine($"URL: {trackable.GetTrackingUrl()}");
+        }
     }
 }
 
