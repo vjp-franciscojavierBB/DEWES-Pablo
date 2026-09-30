@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\javie\\Pablo\\Proyecto generics\\DEWES-Pablo\\OrderFactoryPattern.csproj": {}
+    "c:\\Users\\javie\\Pablo\\UT2ABase\\DEWES-Pablo\\OrderFactoryPattern.csproj": {}
   },
   "projects": {
-    "c:\\Users\\javie\\Pablo\\Proyecto generics\\DEWES-Pablo\\OrderFactoryPattern.csproj": {
+    "c:\\Users\\javie\\Pablo\\UT2ABase\\DEWES-Pablo\\OrderFactoryPattern.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\javie\\Pablo\\Proyecto generics\\DEWES-Pablo\\OrderFactoryPattern.csproj",
+        "projectUniqueName": "c:\\Users\\javie\\Pablo\\UT2ABase\\DEWES-Pablo\\OrderFactoryPattern.csproj",
         "projectName": "OrderFactoryPattern",
-        "projectPath": "c:\\Users\\javie\\Pablo\\Proyecto generics\\DEWES-Pablo\\OrderFactoryPattern.csproj",
+        "projectPath": "c:\\Users\\javie\\Pablo\\UT2ABase\\DEWES-Pablo\\OrderFactoryPattern.csproj",
         "packagesPath": "C:\\Users\\javie\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\javie\\Pablo\\Proyecto generics\\DEWES-Pablo\\obj\\",
+        "outputPath": "c:\\Users\\javie\\Pablo\\UT2ABase\\DEWES-Pablo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\javie\\AppData\\Roaming\\NuGet\\NuGet.Config"
