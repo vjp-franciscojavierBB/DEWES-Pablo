@@ -1,19 +1,18 @@
 namespace OrderFactoryPattern;
 
-class ExpressOrder : Order, ITrackable
+internal sealed class ExpressOrder : ITrackable
 {
-    public ExpressOrder(string id, CustomerType customer, decimal total) : base(id, customer, total)
+    public ExpressOrder(string id, decimal total)
     {
+        Id = id;
+        Total = total;
     }
 
-    public override decimal CalculateShippingCost(double weightKg)
-    {
-        return 8.00m + (decimal)weightKg * 1.20m;
-    }
+    public string Id { get; }
+    public decimal Total { get; }
 
     public string GetTrackingUrl()
     {
         return $"https://worldtracking.com/api/orders/{Id}";
     }
-
 }

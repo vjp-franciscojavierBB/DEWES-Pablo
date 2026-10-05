@@ -1,14 +1,13 @@
 namespace OrderFactoryPattern;
 
-class StandardOrder : Order
+internal sealed class StandardOrder
 {
-    public StandardOrder(string id, CustomerType customer, decimal total) : base(id, customer, total)
+    public StandardOrder(string id, decimal total)
     {
-
+        Id = id;
+        Total = total;
     }
 
-    public override decimal CalculateShippingCost(double weightKg)
-    {
-        return 3.50m + (decimal)weightKg * 0.80m;
-    }
+    public string Id { get; }
+    public decimal Total { get; }
 }

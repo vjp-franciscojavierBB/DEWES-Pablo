@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\javie\\Pablo\\UT2ABase\\DEWES-Pablo\\OrderFactoryPattern.csproj",
+      "projectUniqueName": "C:\\Users\\javie\\Pablo\\UT2ABase\\DEWES-Pablo\\OrderFactoryPattern.csproj",
       "projectName": "OrderFactoryPattern",
-      "projectPath": "c:\\Users\\javie\\Pablo\\UT2ABase\\DEWES-Pablo\\OrderFactoryPattern.csproj",
+      "projectPath": "C:\\Users\\javie\\Pablo\\UT2ABase\\DEWES-Pablo\\OrderFactoryPattern.csproj",
       "packagesPath": "C:\\Users\\javie\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\javie\\Pablo\\UT2ABase\\DEWES-Pablo\\obj\\",
+      "outputPath": "C:\\Users\\javie\\Pablo\\UT2ABase\\DEWES-Pablo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\javie\\AppData\\Roaming\\NuGet\\NuGet.Config"

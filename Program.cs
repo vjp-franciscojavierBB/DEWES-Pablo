@@ -1,116 +1,66 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using OrderFactoryPattern;
+namespace OrderFactoryPattern;
 
-List<Order> _orders = [
-    // Ojo, como no uso el Factory he puesto los descuentos a mano;
-    // lo ideal es usar el OrderFactory.Create para crear los pedidos.
-    new StandardOrder("ORD-0001", CustomerType.Regular, 100.00m),
-    new ExpressOrder("ORD-0002", CustomerType.Premium, 200.00m),
-    new StandardOrder("ORD-0003", CustomerType.Vip, 300.00m),
-];
+internal record Product(string Code, string Name, decimal Price);
+internal record Order(string Id, decimal Total);
 
-Console.WriteLine("=== ORDER FACTORY ===");
-
-while (true)
+internal class RecentItems<T>
 {
-    Console.WriteLine("1. Crear pedido");
-    Console.WriteLine("2. Listar pedidos");
-    Console.WriteLine("3. Salir");
-    Console.Write("Seleccione una opción: ");
+    private readonly List<T> _items = [];
 
-    string? option = Console.ReadLine();
-    switch (option)
+    public RecentItems(int capacity)
     {
-        case "1":
-            Console.WriteLine("=== NUEVO PEDIDO ===");
-
-            Console.Write("Introduzca el ID del pedido: ");
-            string? id = Console.ReadLine();
-
-            Console.Write("Introduzca el tipo de cliente (Regular, Premium, Vip): ");
-            string? customerType = Console.ReadLine();
-
-            Console.Write("Introduzca la cantidad total del pedido: ");
-            string? totalInput = Console.ReadLine();
-
-            Console.Write("Introduzca el tipo de pedido (Standard, Express): ");
-            string? orderType = Console.ReadLine();
-
-            if (!TryCreateOrder(id, customerType, orderType, totalInput, out Order? order, out string? error))
-            {
-                Console.WriteLine(error);
-                continue;
-            }
-
-            _orders.Add(order);
-            Console.WriteLine($"Pedido creado: {order.Id}, Descuento: {order.DiscountRate}");
-            break;
-
-        case "2":
-            ListOrders();
-            break;
-
-        case "3":
-            return;
-
-        default:
-            Console.WriteLine("Opción inválida.");
-            break;
-    }
-}
-
-void ListOrders()
-{
-    if (_orders.Count == 0)
-    {
-        Console.WriteLine("No hay pedidos para mostrar.");
-        return;
+        Capacity = capacity;
     }
 
-    Console.WriteLine("=== PEDIDOS ===");
-    foreach (var order in _orders)
+    public int Capacity { get; }
+    public IReadOnlyList<T> Items => _items;
+
+    public void Add(T item)
     {
-        Console.WriteLine($"ID: {order.Id}, Descuento: {order.DiscountRate}");
-        if (order is ITrackable trackable)
+        _items.Remove(item);
+        _items.Insert(0, item);
+
+        if (_items.Count > Capacity)
         {
-           Console.WriteLine($"URL: {trackable.GetTrackingUrl()}");
+            _items.RemoveAt(_items.Count - 1);
         }
     }
 }
 
-// C# tiene mecaniusmos como los llamados Attributes:
-// NotNullWhen es un atributo que indica que el parámetro de salida "order" no será nulo cuando el método devuelva true.
-bool TryCreateOrder(string? id, string? customerType, string? orderType, string? totalInput,
-    [NotNullWhen(true)] out Order? order, out string? error)
+internal static class Program
 {
-    order = null;
-    error = null;
-
-    if (string.IsNullOrWhiteSpace(id))
+    private static void Main()
     {
-        error = "ID del pedido inválido.";
-        return false;
+        var recentProducts = new RecentItems<Product>(capacity: 3);
+        var recentSearches = new RecentItems<string>(capacity: 3);
+        var recentOrders = new RecentItems<Order>(capacity: 2);
+
+        recentProducts.Add(new Product("SKU-1001", "Camiseta", 12.50m));
+        recentProducts.Add(new Product("SKU-2044", "Gorra", 18.90m));
+        recentProducts.Add(new Product("SKU-7890", "Botas", 59.00m));
+        recentProducts.Add(new Product("SKU-2044", "Gorra", 18.90m));
+
+        recentSearches.Add("smartphone");
+        recentSearches.Add("teclado");
+        recentSearches.Add("monitor");
+        recentSearches.Add("mouse");
+
+        recentOrders.Add(new Order("ORD-101", 120.00m));
+        recentOrders.Add(new Order("ORD-102", 250.00m));
+        recentOrders.Add(new Order("ORD-103", 80.00m));
+
+        PrintAll("Vistos recientemente", recentProducts);
+        PrintAll("Búsquedas recientes", recentSearches);
+        PrintAll("Pedidos consultados", recentOrders);
     }
 
-    if (!Enum.TryParse(customerType, out CustomerType type))
+    private static void PrintAll<T>(string title, RecentItems<T> recent)
     {
-        error = "Tipo de cliente inválido.";
-        return false;
+        Console.WriteLine($"{title} ({recent.Items.Count}/{recent.Capacity}):");
+
+        foreach (var item in recent.Items)
+        {
+            Console.WriteLine($" - {item}");
+        }
     }
-
-    if (!decimal.TryParse(totalInput, out var total))
-    {
-        error = "Cantidad total inválida.";
-        return false;
-    }
-
-    if (!Enum.TryParse(orderType, out ShippingType shippingType))
-    {
-        error = "Tipo de envío inválido.";
-        return false;
-    }
-
-    order = OrderFactory.Create(id, type, total, shippingType);
-
-    return true;
 }
